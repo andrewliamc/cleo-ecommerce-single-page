@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-cleo-bone text-cleo-charcoal font-body antialiased;
+}
+
+a {
+  @apply transition-colors duration-150;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid theme("colors.cleo-olive");
+  outline-offset: 2px;
+}
+
+.section-container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
