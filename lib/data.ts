@@ -5,7 +5,11 @@ export const product = {
     "Crafted in small batches with nourishing oils, gentle botanicals, and natural essential oil blends.",
   price: "$16.00",
   options: ["Single Bar", "3-Pack"],
-  badges: ["Palm-free", "Cold-processed", "Free returns", "Ships in 2-3 days"]
+  badges: ["Palm-free", "Cold-processed", "Free returns", "Ships in 2-3 days"],
+  image: {
+    src: "/images/hero-soap.jpg",
+    alt: "Stacked cedar and citrus soap bars with dried fruit on a ceramic dish"
+  }
 };
 
 export const scentFeatures = [
@@ -70,21 +74,37 @@ export const relatedProducts = [
   {
     name: "Lavender Cedar",
     description: "Grounding lavender with soft cedar smoke.",
-    price: "$16.00"
+    price: "$16.00",
+    image: {
+      src: "/images/products/lavender-cedar.jpg",
+      alt: "Lavender soap bars wrapped in kraft paper and twine"
+    }
   },
   {
     name: "Citrus Mint",
     description: "Lively grapefruit peel with a cool mint finish.",
-    price: "$16.00"
+    price: "$16.00",
+    image: {
+      src: "/images/products/citrus-mint.jpg",
+      alt: "Citrus soap bars beside fresh grapefruit slices"
+    }
   },
   {
     name: "Unscented Oat + Honey",
     description: "Barely-there scent; colloidal oats for calm, cushiony lather.",
-    price: "$16.00"
+    price: "$16.00",
+    image: {
+      src: "/images/products/oat-honey.jpg",
+      alt: "Cream-colored soap bar on a soft fabric background"
+    }
   },
   {
     name: "Bergamot Peach",
     description: "Sunny bergamot and stone fruit sweetness.",
-    price: "$16.00"
+    price: "$16.00",
+    image: {
+      src: "/images/products/bergamot-peach.jpg",
+      alt: "Amber-hued soap bars with dried botanicals"
+    }
   }
 ];

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -28,23 +29,32 @@ export function HeroSection() {
     <section id="hero" className="section-container py-14 sm:py-16 lg:py-20">
       <div className="grid gap-10 lg:grid-cols-[1.05fr_1fr] items-start">
         <div className="space-y-4">
-          <div className="relative aspect-square overflow-hidden rounded-3xl bg-gradient-to-br from-cleo-clay/70 via-white to-cleo-cocoa/60 shadow-soft">
-            <div
-              role="img"
-              aria-label="A warm toned photo of Cleo's cedar citrus soap bar"
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <div className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-cleo-cocoa/40 bg-white/80 px-8 py-6 text-center shadow-soft">
-                <span className="font-ui text-xs uppercase tracking-[0.2em] text-cleo-charcoal/70">
-                  Cleo Soap
+          <div className="relative aspect-square overflow-hidden rounded-3xl bg-cleo-clay/50 shadow-soft">
+            <Image
+              src={product.image.src}
+              alt={product.image.alt}
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 1024px) 560px, (min-width: 768px) 80vw, 90vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-cleo-cocoa/35" />
+            <div className="absolute inset-0 bg-gradient-to-t from-cleo-charcoal/25 via-transparent to-transparent" />
+            <div className="absolute inset-x-6 bottom-6 flex flex-wrap items-center gap-3 rounded-2xl bg-white/90 px-6 py-4 shadow-soft backdrop-blur">
+              <div className="flex flex-col">
+                <span className="font-ui text-[11px] uppercase tracking-[0.2em] text-cleo-charcoal/70">
+                  {product.label}
                 </span>
-                <span className="font-heading text-3xl font-semibold text-cleo-charcoal">
-                  Cedar Citrus
+                <span className="font-heading text-2xl font-semibold text-cleo-charcoal">
+                  {product.name}
                 </span>
                 <span className="text-sm text-cleo-charcoal/70">
                   Hand-poured, hand-cut, cured 4-6 weeks.
                 </span>
               </div>
+              <span className="ml-auto rounded-full bg-cleo-olive/15 px-3 py-1 text-xs font-ui uppercase tracking-[0.18em] text-cleo-olive">
+                Fresh batch
+              </span>
             </div>
           </div>
         </div>

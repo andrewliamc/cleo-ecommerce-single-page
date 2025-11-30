@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -6,6 +7,10 @@ type ProductCardProps = {
   name: string;
   description: string;
   price: string;
+  image: {
+    src: string;
+    alt: string;
+  };
   className?: string;
 };
 
@@ -13,6 +18,7 @@ export function ProductCard({
   name,
   description,
   price,
+  image,
   className
 }: ProductCardProps) {
   return (
@@ -22,10 +28,18 @@ export function ProductCard({
         className
       )}
     >
-      <div className="relative h-40 overflow-hidden rounded-t-2xl bg-gradient-to-br from-cleo-clay/70 via-white to-cleo-cocoa/50">
-        <div className="absolute inset-0 flex items-center justify-center text-sm uppercase tracking-[0.2em] text-cleo-charcoal/60">
-          Soap Bar
-        </div>
+      <div className="group relative h-44 overflow-hidden rounded-t-2xl bg-cleo-clay/40">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(min-width: 1024px) 260px, (min-width: 768px) 40vw, 80vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-cleo-charcoal/25 via-transparent to-transparent" />
+        <span className="absolute left-3 top-3 rounded-full bg-white/85 px-3 py-1 text-[11px] font-ui uppercase tracking-[0.2em] text-cleo-charcoal">
+          Cleo Bar
+        </span>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-4">
         <div>
